@@ -12,6 +12,7 @@ class Pokemon(models.Model):
 class PokemonEntity(models.Model):
     latitude = models.FloatField()
     longitude = models.FloatField()
+    pokemon = models.ForeignKey(Pokemon, on_delete=models.CASCADE)
 
     def __str__(self):
         return self.latitude, self.longitude
