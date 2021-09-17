@@ -22,4 +22,4 @@ class PokemonEntity(models.Model):
     stamina = models.IntegerField(default=0, blank=True)
 
     def __str__(self):
-        return self.latitude, self.longitude
+        return f"{self.pokemon}: {self.latitude}, {self.longitude}"
