@@ -10,7 +10,7 @@ class Pokemon(models.Model):
         "Название (яп.)", max_length=200, default="", blank=True
     )
     previous_evolution = models.ForeignKey(
-        "Pokemon", on_delete=models.CASCADE, null=True, blank=True,
+        "Pokemon", on_delete=models.SET_NULL, null=True, blank=True,
         related_name="next_evolution", verbose_name="Предыдущая эволюция",
     )
     description = models.TextField("Описание", default="", blank=True)
