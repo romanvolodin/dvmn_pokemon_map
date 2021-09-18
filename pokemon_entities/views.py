@@ -84,10 +84,8 @@ def show_pokemon(request, pokemon_id):
     except Pokemon.DoesNotExist:
         next_evolution = {}
 
-    pokemon_entities = PokemonEntity.objects.filter(pokemon=pokemon)
-
     folium_map = folium.Map(location=MOSCOW_CENTER, zoom_start=12)
-    for pokemon_entity in pokemon_entities:
+    for pokemon_entity in pokemon.entities.all():
         add_pokemon(
             folium_map,
             pokemon_entity.latitude,
